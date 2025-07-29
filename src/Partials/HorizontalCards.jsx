@@ -1,15 +1,23 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Dropdown from './Dropdown'
 
-const HorizontalCards = () => {
+const HorizontalCards = ({data}) => {
   return (
-    <div className='w-full h-[40%] mt-10 p-5'>
-        <div className='mb-4 text-zinc-400'>
-            <h1 className='text-2xl font-semibold'>Trending <i className="text-orange-500 mr-2 ri-fire-fill"></i> </h1>
+    data &&
+        <div className='w-full flex overflow-x-auto'>
+            {data.map((d,i)=>{
+                return(
+                    <div key={i} className='ml-4 p-2 h-[50vh] min-w-[20%] mr-1 flex flex-col bg-zinc-700 mb-4 rounded-md text-zinc-300 overflow-hidden'>
+                        <img className='w-full h-[45%] shadow-md shadow-zinc-500 object-cover rounded-sm' src= { d.profile_path || d.poster_path || d.backdrop_path ? `https://image.tmdb.org/t/p/w500/${d.poster_path || d.backdrop_path || d.profile_path}` : noImage}/>
+                        <div className='h-[55%]'>
+                            <h1 className='mt-2 text-xl font-semibold text-white'>{d.title || d.name || d.original_name}</h1>
+                            <p className='text-xs mt-1'>{(d.description ? d.description.slice(0, 100) : "No description available" || d.overview ? d.overview.slice(0, 100) : "No description available" || d.summary ? d.summary.slice(0, 100) : "No description available")}...<Link className='text-blue-200'>more</Link></ p>
+                        </div>
+                    </div>
+                )
+            })}
         </div>
-        <div className='w-[20%] h-full bg-blue-300'>
-
-        </div>
-    </div>
   )
 }
 

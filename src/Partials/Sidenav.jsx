@@ -11,7 +11,7 @@ const Sidenav = () => {
 
         <nav className='flex flex-col gap-3 my-6 ml-5'>
             <h1 className='text-white text-xl'>New Feeds</h1>
-            <Link className='p-2 text-zinc-400 pl-5 hover:text-white hover:bg-[#6556CD] rounded-lg mr-5'><i className="mr-2 ri-fire-fill"></i> Trending</Link>
+            <Link to={"/trending"} className='p-2 text-zinc-400 pl-5 hover:text-white hover:bg-[#6556CD] rounded-lg mr-5'><i className="mr-2 ri-fire-fill"></i> Trending</Link>
             <Link className='p-2 text-zinc-400 pl-5 hover:text-white hover:bg-[#6556CD] rounded-lg mr-5'><i className="mr-2 ri-bard-fill"></i> Popular</Link>
             <Link className='p-2 text-zinc-400 pl-5 hover:text-white hover:bg-[#6556CD] rounded-lg mr-5'><i className="mr-2 ri-movie-2-fill"></i> Movies</Link>
             <Link className='p-2 text-zinc-400 pl-5 hover:text-white hover:bg-[#6556CD] rounded-lg mr-5'><i className="mr-2 ri-tv-2-fill"></i> TV Shows</Link>
