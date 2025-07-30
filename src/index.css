@@ -25,7 +25,7 @@ select{
   outline: 0;
   box-shadow: none;
   border: 0 !important;
-  background: #27272a;
+  background: #4b4b50;
   background-image: none;
   flex: 1;
   padding: 0 0.5em;
@@ -42,11 +42,12 @@ select::-ms-expand{
 .select{
   position : relative ;
   display: flex;
-  width: 16em;
+  width: 12em;
   height : 2.5em ;
-  background: #27272a;
+  background: #4b4b50;
 overflow: hidden;
 border-radius: 0.25em;
+  margin-right: 4px ;
 
 }
 

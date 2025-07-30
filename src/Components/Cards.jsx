@@ -1,18 +1,24 @@
 import React from 'react'
 import Loader from './Loader';
-
+import { Link } from 'react-router-dom';
 const Cards = ({data}) => {
     console.log(data);
-  return data ? (
-    <div className='w-full p-7 flex flex-wrap gap-10  text-white'>
-        {/* {data.map((d,i)=>(
-            <div key={i} className='w-[20%] h-[25vw] object-cover p-3 '>
-                <img className='w-full h-[100%] p-2' src={`https://image.tmdb.org/t/p/w500/${d.poster_path}`} />
-                <h2 className='text-center font-semibold text-zinc-300 text-xl'>{d.title || d.name || d.original_name || d.original_title}</h2>
-            </div>
-        ))} */}
+  return (
+    <div className='w-full bg-[#1F1E24] mt-8 mx-auto p-7 flex flex-wrap gap-16 justify-center  text-white'>
+        {data.map((d,i)=>(
+            <Link key={i} className='relative rounded-md mb-8 shadow-md shadow-black w-[20%] h-[25vw] object-cover'>
+                <img className='w-full h-[100%]  object-cover rounded-md' src={`https://image.tmdb.org/t/p/w500/${d.poster_path || d.backdrop_path || d.profile_path}`} />
+                <h2 className='mt-2 text-center font-semibold text-zinc-300 hover:text-zinc-200 cursor-pointer text-xl'>{d.title || d.name || d.original_name || d.original_title}</h2>
+                {d.vote_average && 
+                (
+                    <div className='text-white absolute right-[-10%] top-[5%] w-[7vh] text-center h-[7vh] p-2 rounded-full flex justify-center items-center bg-yellow-600'>
+                        {Math.floor(d.vote_average)} <sup>%</sup>
+                    </div>
+                )}
+            </Link>
+        ))}
     </div>
-  ): (<Loader />)
+  )
 }
 
 export default Cards
