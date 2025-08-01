@@ -35,7 +35,7 @@ const Topnav = ({className , div}) => {
         <div className={`absolute z-50 ${div} top-[77%] w-[60%] bg-zinc-800 max-h-[40vh] overflow-auto`}>
             {searchData.map((data,index)=>{
                 return(
-                    <Link key={index} className="z-999 p-4 w-full font-semibold hover:bg-zinc-900 hover:text-zinc-500 duration-300 border-b-2 border-zinc-600 text-zinc-400 flex justify-start items-center">
+                    <Link to={`/${data.media_type}/${data.id}`} key={index} className="z-999 p-4 w-full font-semibold hover:bg-zinc-900 hover:text-zinc-500 duration-300 border-b-2 border-zinc-600 text-zinc-400 flex justify-start items-center">
                         <img className='w-[12vh] h-[12vh] shadow-md shadow-zinc-500 object-cover rounded-full mr-8' src= { data.profile_path || data.poster_path || data.backdrop_path ? `https://image.tmdb.org/t/p/w500/${data.poster_path || data.backdrop_path || data.profile_path}` : noImage}/>
                         <span>{data.name || data.orignial_name || data.original_title }</span>
                     </Link>

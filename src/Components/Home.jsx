@@ -44,7 +44,7 @@ const Home = () => {
   return wallpaper && trending ?(
     <>
         <Sidenav />
-        <div className='h-full w-[80%] overflow-y-auto overflow-x-hidden'>
+        <div className='h-full w-[80%] overflow-x-hidden'>
             <Topnav />
             <Header data={wallpaper} />
             

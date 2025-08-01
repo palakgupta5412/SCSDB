@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import 'remixicon/fonts/remixicon.css'
 const Sidenav = () => {
   return (
-    <div className='h-full p-2 w-[20%] border-r-2 border-zinc-500'>
+    <div className='p-2 w-[20%] border-r-2 border-zinc-500'>
         <h1 className='text-2xl text-white p-3 flex gap-2'>
             <i className="text-[#6556CD] ri-tv-fill"></i>
             <span>SCSDB</span>
@@ -13,7 +13,7 @@ const Sidenav = () => {
             <h1 className='text-white text-xl'>New Feeds</h1>
             <Link to={"/trending"} className='p-2 text-zinc-400 pl-5 hover:text-white hover:bg-[#6556CD] rounded-lg mr-5'><i className="mr-2 ri-fire-fill"></i> Trending</Link>
             <Link to={"/popular"} className='p-2 text-zinc-400 pl-5 hover:text-white hover:bg-[#6556CD] rounded-lg mr-5'><i className="mr-2 ri-bard-fill"></i> Popular</Link>
-            <Link to={'/movies'} className='p-2 text-zinc-400 pl-5 hover:text-white hover:bg-[#6556CD] rounded-lg mr-5'><i className="mr-2 ri-movie-2-fill"></i> Movies</Link>
+            <Link to={'/movie'} className='p-2 text-zinc-400 pl-5 hover:text-white hover:bg-[#6556CD] rounded-lg mr-5'><i className="mr-2 ri-movie-2-fill"></i> Movies</Link>
             <Link to={'/tv'} className='p-2 text-zinc-400 pl-5 hover:text-white hover:bg-[#6556CD] rounded-lg mr-5'><i className="mr-2 ri-tv-2-fill"></i> TV Shows</Link>
             <Link to={'/people'} className='p-2 text-zinc-400 pl-5 hover:text-white hover:bg-[#6556CD] rounded-lg mr-5'><i className="mr-2 ri-user-fill"></i> People</Link>
         </nav>

@@ -7,7 +7,7 @@ import axios from '../Utils/axios'
 import Cards from '../Components/Cards'
 import Loader from '../Components/Loader'
 import InfiniteScroll from 'react-infinite-scroll-component';
-
+import { Link } from 'react-router-dom';
 const Movies = () => {
 
     document.title = "SCS | Movies";
@@ -72,7 +72,7 @@ const Movies = () => {
           hasMore={hasMore}
           loader={<h1 className='text-zinc-400 p-10'>Loading...</h1>}
         >
-          <Cards data={movies}/>  
+          <Cards data={movies} title={"movie"}/>  
         </InfiniteScroll>
     </div>
   ) : <Loader />

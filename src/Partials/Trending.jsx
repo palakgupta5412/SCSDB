@@ -75,7 +75,7 @@ const Trending = () => {
           hasMore={hasMore}
           loader={<h1 className='text-zinc-400 p-10'>Loading...</h1>}
         >
-          <Cards data={trending}/>  
+          <Cards data={trending} title={"trending"}/>  
         </InfiniteScroll>
     </div>
   ) : (<Loader />)
