@@ -55,6 +55,9 @@ const Movies = () => {
         refreshHandler();
     } , [])
 
+    useEffect(()=>{
+        (<Loader />)
+    }, [movies])
   return movies ? (
     <div className='w-screen h-screen'>
         <div className='flex items-center justify-between h-[10vh] align-center pt-4 '>

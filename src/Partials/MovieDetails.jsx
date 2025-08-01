@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { asyncMovieLoader } from '../store/Actions/movieActions'
 import { removemovie } from '../store/Actions/movieActions'
 import { useDispatch, useSelector } from 'react-redux'
-import { useLocation, useParams } from 'react-router-dom'
+import { Outlet, useLocation, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Loader from '../Components/Loader.jsx'
@@ -76,8 +76,9 @@ const MovieDetails = () => {
         </div>
         <hr className='border-zinc-400'/>
         <h1 className='text-2xl font-bold text-white my-6'>Recommendations</h1>
-        <HorizontalCards data={data.info.recommendations ? data.info.recommendations : data.info.similar} />
+        <HorizontalCards data={data.info.recommendations ? data.info.recommendations : (data.info.similar ? data.info.similar : [])} />
 
+        <Outlet />
     </div>
     </div>
   ):<Loader />
